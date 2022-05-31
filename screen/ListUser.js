@@ -66,14 +66,15 @@ const navigateItemChat = (item) => {
           roomId,
           idInformationYou: data.uid,
           idInformationFriend: item.uid,
-          lastMsg: '',
+          lastMsg: 'Xin chao ban',
         }
 
         const dataMessengerSend = {
           roomId,
           idInformationYou: item.uid,
           idInformationFriend: data.uid,
-          lastMsg: '',
+          lastMsg: 'Xin chao ban',
+
         }
 
         // const dataMessengerSendN = {

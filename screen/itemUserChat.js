@@ -36,9 +36,9 @@ const RenderItem = ({item}) => {
     
 
     return (
+
         <View key={item.roomId}  style={styles.itemchat}>
-           
-                <Image
+         <Image
                     style={styles.tinyLogo}
                     source={{
                         uri: informationUserm.avatar
@@ -51,8 +51,8 @@ const RenderItem = ({item}) => {
                         {
                             item.type
                         }
-                        <Text style={styles.itemChat}>{(item?.lastMsg).slice(0, 10).concat("...")}</Text>
-                        <Text style={styles.contentchat}>{moment(item?.sendTime).format('MM/DD/YYYY HH:ss')}</Text>
+                        <Text style={styles.itemChat}> { (item?.lastMsg).length >10 ?    (item?.lastMsg).slice(0, 10).concat("...") : item?.lastMsg}</Text>
+                        <Text style={styles.timeChat}>{moment(item?.sendTime).format('MM/DD/YYYY HH:ss')}</Text>
                     </View>
                 </View>
             
@@ -119,6 +119,12 @@ const styles = StyleSheet.create({
     contentnd: {
       flexDirection: "row",
       justifyContent: "space-around"
+    },
+    timeChat:{
+     color: '#05375a',
+     fontSize: 15,
+     marginTop:3,
+     marginLeft: 50
     },
     itemChat:{
       color: '#009385',
